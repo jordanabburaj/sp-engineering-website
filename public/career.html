@@ -366,11 +366,11 @@ function closeApplicationForm() {
   if (removeBtn) removeBtn.style.display = "none";
 
   modal.style.display = "none";
-  document.body.classList.remove("modal-open"); // ✅ UNLOCK PAGE SCROLL
+  document.body.classList.remove("modal-open"); // UNLOCK WEBSITE
 }
 
 function openApplicationForm() {
-  document.body.classList.add("modal-open"); // ✅ LOCK PAGE SCROLL
+  document.body.classList.add("modal-open"); // LOCK WEBSITE
   document.getElementById("applicationModal").style.display = "flex";
 }
 </script>
