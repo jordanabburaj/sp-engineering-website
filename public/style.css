@@ -1430,6 +1430,82 @@ section.about {
 /* =========================================
    MOBILE CAREER FORM SCROLL FIX (SAFE)
    ========================================= */
+/* =========================================
+   MOBILE MODAL FORM – SCROLL & SAFE AREAS
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* STOP PAGE SCROLL WHEN FORM IS OPEN */
+  body.modal-open {
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+
+  /* FULLSCREEN MODAL CONTAINER */
+  .career-modal,
+  .career-popup,
+  .career-form-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* FORM CARD */
+  .career-form-wrapper,
+  .career-form-container,
+  .career-form {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    height: 100vh;
+    background: #fff;
+    overflow: hidden; /* IMPORTANT */
+    border-radius: 0;
+  }
+
+  /* SCROLLABLE FORM CONTENT ONLY */
+  .career-form-content,
+  .career-form-body,
+  .form-body {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 80px 20px 140px;
+    box-sizing: border-box;
+  }
+
+  /* CLOSE (X) BUTTON – SAFE FROM NOTCH */
+  .career-close,
+  .career-close-btn,
+  .form-close {
+    position: fixed;
+    top: env(safe-area-inset-top, 16px);
+    right: 16px;
+    z-index: 10000;
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  /* SUBMIT BUTTON – SAFE FROM ADDRESS BAR */
+  .career-form button[type="submit"],
+  .career-submit {
+    position: fixed;
+    bottom: env(safe-area-inset-bottom, 16px);
+    left: 20px;
+    right: 20px;
+    z-index: 10000;
+  }
+
+}
 
 @media (max-width: 768px) {
 
