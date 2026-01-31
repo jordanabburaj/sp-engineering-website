@@ -1427,6 +1427,44 @@ section.about {
 .career-form-container button[type="submit"] {
   margin-bottom: 60px;
 }
+/* =========================================
+   MOBILE CAREER FORM SCROLL FIX (SAFE)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* Main wrapper that holds the form */
+  .career-form-wrapper,
+  .career-form-container,
+  .career-form {
+    height: auto;
+    max-height: 100dvh;      /* dynamic viewport */
+    max-height: 100vh;       /* fallback */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 120px;  /* space for mobile browser UI */
+  }
+
+  /* Prevent body from blocking scroll */
+  body {
+    overflow-y: auto;
+  }
+
+  /* Ensure submit button is never hidden */
+  .career-form button,
+  .career-form button[type="submit"] {
+    margin-bottom: 80px;
+  }
+
+  /* iOS safe-area support (notch / home bar) */
+  @supports (padding: max(0px)) {
+    .career-form-wrapper,
+    .career-form-container,
+    .career-form {
+      padding-bottom: max(120px, env(safe-area-inset-bottom));
+    }
+  }
+}
 
 /* iOS safe area support */
 @supports (padding: max(0px)) {
