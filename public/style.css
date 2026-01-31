@@ -1411,6 +1411,35 @@ section.about {
   text-decoration: underline;
 }
 
+/* ===============================
+   MOBILE VIEWPORT FIX
+   =============================== */
+
+/* Main career form container */
+.career-form-container {
+  max-height: 100dvh;       /* modern mobile browsers */
+  max-height: 100vh;        /* fallback */
+  overflow-y: auto;
+  padding-bottom: 90px;     /* space for mobile UI */
+}
+
+/* Submit button spacing fix */
+.career-form-container button[type="submit"] {
+  margin-bottom: 60px;
+}
+
+/* iOS safe area support */
+@supports (padding: max(0px)) {
+  .career-form-container {
+    padding-bottom: max(90px, env(safe-area-inset-bottom));
+  }
+}
+@media (max-width: 768px) {
+  .career-modal {
+    align-items: flex-start;
+  }
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
