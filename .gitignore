@@ -1,0 +1,11 @@
+# Node
+node_modules/
+
+# Environment variables
+.env
+
+# Uploads (if any)
+uploads/
+
+# OS files
+.DS_Store

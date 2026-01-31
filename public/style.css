@@ -1,0 +1,1647 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f7f9fc;
+  color: #1a1a1a;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%;
+}
+
+.page-content {
+  flex: 1;
+}
+
+/* PAGE SYSTEM */
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* HEADER */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 68px;
+}
+
+.brand h1 {
+  font-size: 20px;
+  color: #0f4c81;
+}
+
+.brand span {
+  font-size: 12px;
+  color: #555;
+}
+
+nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #0f4c81;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 40px 10px;
+}
+
+/* ------------------------------
+   GLOBAL SECTION SPACING (REFINED)
+-------------------------------- */
+
+section {
+  padding: 80px 0;
+}
+
+/* tighter spacing after services */
+.services + section {
+  padding-top: 50px;
+}
+
+/* HERO */
+.hero {
+  background: #ffffff;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #0f4c81;
+}
+
+.hero-text p {
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.primary-btn {
+  display: inline-block;
+  background-color: #0f4c81;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color: #083a7a;
+}
+
+.hero-stats {
+  display: grid;
+  gap: 20px;
+}
+
+.hero-stats div {
+  background: #f1f4f8;
+  padding: 20px;
+}
+
+.hero-stats h3 {
+  color: #0f4c81;
+}
+
+/* SERVICES */
+.services {
+  background: #ffffff;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 24px;
+  color: #0f4c81;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.service-list h4 {
+  margin-bottom: 10px;
+  color: #0f4c81;
+}
+
+.services p {
+  max-width: 900px;
+}
+
+/* ENGINEERING VISUAL */
+.engineering-visual {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.visual-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  transform: translateY(60px);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.visual-wrapper img {
+  width: 100%;
+  display: block;
+  transition: transform 1.2s ease;
+}
+
+.visual-wrapper.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.visual-wrapper:hover img {
+  transform: scale(1.04);
+}
+
+/* INDUSTRIES WE SERVE */
+.career {
+  background: #f7f9fc;
+  text-align: center;
+  padding: 70px 0;
+}
+
+.career h2 {
+  margin-bottom: 16px;
+}
+
+.career p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #444;
+  line-height: 1.8;
+}
+
+.career p:last-child {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* CLIENTS */
+.clients {
+  background: #ffffff;
+  padding: 40px 0 30px;
+  position: relative;
+}
+
+.clients .section-title {
+  margin-bottom: 30px;
+}
+
+.logo-slider {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 50px;
+  animation: scroll-logos 25s linear infinite;
+}
+
+.logo-track img {
+  height: 55px;
+  margin: 0 32px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.logo-track img:hover {
+  opacity: 1;
+}
+
+@keyframes scroll-logos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* WHY CHOOSE US */
+.about {
+  background: #ffffff;
+  padding: 30px 0 0px;
+  position: relative;
+}
+
+.about h2 {
+  margin-block-start: 0px;
+  margin-bottom: 14px;
+  color: #0f4c81;
+  font-size: 28px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* text left, image right */
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.about-points {
+  margin-top: 20px;
+}
+
+.about p {
+  max-width: 600px;
+}
+
+.about-points ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.about-points li {
+  list-style: none;
+}
+
+.about-points li {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+/* CONTACT */
+.contact {
+  background: #f1f4f8;
+  text-align: center;
+}
+
+.contact-box p {
+  margin: 12px 0 24px;
+}
+
+/* FOOTER */
+.footer {
+  background: linear-gradient(135deg, #0f4c81, #083a7a);
+  color: #ffffff;
+  padding: 60px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.3fr 1.2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.footer h3,
+.footer h4 {
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.footer p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #e6edf5;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #e6edf5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: #ffffff;
+  color: #0f4c81;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-btn:hover {
+  background: #e6edf5;
+  transform: translateY(-2px);
+}
+
+.office-hours {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer .container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #cfd9e5;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Footer Animation */
+.reveal-footer {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.reveal-footer.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reduce gap between Hero and Our Core Services */
+.hero {
+  padding-bottom: 5px;
+}
+
+.services {
+  padding-top: 5px;
+}
+/* Reduce extra space above hero */
+.hero {
+  padding-top: 30px;
+}
+/* Reduce gap between Core Services and Industries We Serve */
+.services {
+  padding-bottom: 20px;
+}
+/* Tight & Slim Industries We Serve Section */
+/* Industries We Serve — TRUE vertical centering */
+section.career {
+  padding: 20px 0;                 /* keep slim band */
+  display: flex;
+  align-items: center;             /* vertical centering */
+  padding-bottom: 20px;
+}
+section.clients {
+  padding-top: 30px;
+  padding-bottom: 0px;
+}
+section.career .container {
+  padding: 0;
+}
+
+/* Remove default margins that break centering */
+section.career h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+
+section.career p {
+  max-width: 900px;
+  margin: 0;
+  line-height: 1.45;
+  font-size: 15px;
+}
+
+section.career p + p {
+  margin-top: 6px;
+}
+section.about {
+  padding-top: 0px;
+}
+.about-image img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  display: block;
+}
+
+.about-image {
+  justify-self: end;
+  margin-left: 20px;
+}
+
+/* OUR COMMITMENT – Title + Paragraph */
+.commitment {
+  background: #ffffff;
+  padding: 0px 0 50px;
+}
+
+.commitment-title {
+  color: #0f4c81;
+  margin-bottom: 10px;
+}
+
+.commitment-line {
+  display: none;
+}
+
+.commitment-text {
+  max-width: 1500px;   
+  font-size: 15.5px;
+  line-height: 1.6;
+  font-weight: 400;   /* same as above */
+  margin: 0;
+}
+/* =========================
+   ABOUT PAGE SPACING FIX
+   ========================= */
+
+.about-page section.about {
+  padding-top: 16px;
+  padding-bottom: 0;
+}
+
+.about-page section.about + section.about {
+  padding-top: 0;
+}
+
+.about-page section.about > .container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.about-page ul.about-points {
+  margin-bottom: 0;
+}
+
+
+
+/* ABOUT GRID UPDATE */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: start;
+}
+
+
+/* IMAGE SLIDER */
+.about-slider {
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  justify-self: end;
+  align-self: start;
+  
+}
+
+
+
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;     /* TEMPORARY: force visibility */
+}
+
+
+.slide.active {
+  opacity: 1;
+}
+
+
+/* FADE-IN ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ABOUT GRID – DESKTOP */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: start;
+}
+
+
+
+/* =====================================================
+   ABOUT PAGE – CLEAN, ISOLATED, FINAL LAYOUT
+   (Does NOT affect Home / Services / Career pages)
+   ===================================================== */
+
+.about-page .about {
+  background: #ffffff;
+  padding: 40px 0 0;
+}
+
+/* Grid ONLY for About page first section */
+.about-page .about .about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* text | image */
+  gap: 60px;
+  align-items: start;
+}
+
+/* Text cleanup */
+.about-page .about-text h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  color: #0f4c81;
+}
+
+.about-page .about-text p {
+  max-width: 600px;
+}
+
+.about-page .about-text p:first-of-type {
+  margin-top: 0;
+}
+
+/* ======================
+   IMAGE BLOCK (RIGHT)
+   ====================== */
+
+.about-page .about-slider {
+  width: 100%;
+  max-width: 420px;
+  height: 420px;              /* explicit height = no collapse */
+  justify-self: end;
+  align-self: start;
+  margin-right: 100px; 
+}
+
+/* Slider wrapper */
+.about-page .slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-radius: 16px;
+  
+}
+
+/* TOP ABOUT SLIDER – MATCH PORTRAIT SHADOW */
+.about-page .about-slider .slider {
+  box-shadow:
+    -18px 0 32px rgba(0, 0, 0, 0.15),
+     18px 0 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+
+/* Image */
+.about-page .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.about-page .slide.active {
+  opacity: 1;
+}
+
+/* =====================================================
+   ABOUT PAGE – FLOATING PORTRAIT SLIDER (RIGHT)
+   ZERO LAYOUT IMPACT
+   ===================================================== */
+
+.about-page {
+  position: relative;
+}
+
+/* Floating portrait image */
+.about-page .about-portrait-float {
+  position: absolute;
+  right: 165px;
+  top: 1070px;
+  width: 420px;
+  height: 640px;
+  z-index: 10;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+
+/* Create positioning context for floating images */
+.about-page .page-content {
+  position: relative;
+}
+
+/* Slider container */
+.about-page .about-portrait-float .slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* Slides */
+.about-page .about-portrait-float .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.about-page .about-portrait-float .slide.active {
+  opacity: 1;
+}
+
+
+
+/* =====================================================
+   SERVICES PAGE – ISOLATED, SAFE, PREMIUM
+   ===================================================== */
+
+.services-page .services {
+  background: #ffffff;
+}
+
+.services-page .service-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.services-page .service-row.reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.services-page .service-text h3 {
+  color: #0f4c81;
+  margin-bottom: 12px;
+}
+
+.services-page .service-text p {
+  max-width: 620px;
+  margin-bottom: 12px;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ===============================
+   SERVICE IMAGE – SLIDER SAFE
+   =============================== */
+
+.services-page .service-image {
+  width: 420px;
+  height: 420px;              /* FIX: prevents collapse */
+  position: relative;         /* REQUIRED for absolute slides */
+  justify-self: end;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    -18px 0 32px rgba(0,0,0,0.15),
+     18px 0 32px rgba(0,0,0,0.15);
+     border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Zigzag alignment */
+.services-page .service-row.reverse .service-image {
+  justify-self: start;
+}
+
+/* Slider wrapper */
+.services-page .service-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Slides */
+.services-page .service-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.services-page .service-slide.active {
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .services-page .service-row,
+  .services-page .service-row.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .services-page .service-image {
+    margin-top: 24px;
+    justify-self: center;
+  }
+}
+
+/* ============================
+   SERVICES – IMAGE SLIDER
+   ============================ */
+
+.services-page .service-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.services-page .service-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.services-page .service-slide.active {
+  opacity: 1;
+}
+
+
+/* ======================
+   MOBILE ONLY
+   ====================== */
+@media (max-width: 640px) {
+  .about-page .about .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page .about-slider {
+    margin: 24px auto 0;
+    justify-self: center;
+  }
+}
+
+/* ======================
+   CAREER PAGE – FINAL
+   MATCHES SITE STYLE
+   ====================== */
+
+.career-page {
+  background: #ffffff;
+  padding-top: 5px;
+}
+
+.career-header h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+/* Header text */
+.career-header p {
+  margin-top: 0;
+  margin-bottom: 14px;
+  max-width: 600px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Section spacing */
+.career-section {
+  margin-top: 50px;
+}
+
+/* Section headings – SAME BLUE as site */
+.career-section h3 {
+  color: #0f4c81;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+/* Lists */
+.career-points,
+.career-roles {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* =========================================
+   CAREER PAGE – TICK MARK STYLE (LIKE ABOUT)
+   ========================================= */
+
+/* =========================================
+   CAREER PAGE – ✔ TICK MARK STYLE
+   ========================================= */
+
+.career-points li,
+.career-roles li {
+  font-size: 15px;              /* SAME as About */
+  line-height: 24px;            /* SAME as About */
+  font-weight: 400;
+  color: rgb(26, 26, 26);       /* SAME as About */
+  margin-bottom: 12px;          /* SAME spacing */
+}
+
+
+
+/* CTA box – same visual language */
+.career-cta {
+  margin-top: 60px;
+  padding: 30px;
+  background: #f1f4f8;
+  border-left: 4px solid #0f4c81;
+}
+
+.career-btn {
+  margin-top: 10px;
+  background: #0f4c81;
+  color: #ffffff;
+  padding: 12px 26px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.career-btn:hover {
+  background: #083a7a;
+}
+
+
+
+
+@media (max-width: 640px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-slider {
+    justify-self: center;
+    margin-top: 24px;
+  }
+}
+
+
+/* CAREER PAGE – CLEAN LEFT CONTENT + RIGHT LOGO */
+
+.career-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.career-left {
+  width: 100%;
+}
+
+/* Right logo area */
+.career-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.career-logo {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+}
+
+/* Mobile safety */
+@media (max-width: 900px) {
+  .career-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .career-right {
+    margin-top: 40px;
+  }
+}
+
+
+/* =========================
+   CAREER CTA – VERTICAL (FINAL)
+   ========================= */
+
+.full-width-cta {
+  margin-top: 60px;
+  padding: 30px 40px;
+  background: #f1f4f8;
+  border-left: 4px solid #0f4c81;
+
+  /* IMPORTANT PART */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.full-width-cta p {
+  margin: 0 0 14px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+
+/* =========================
+   CAREER PAGE – RIGHT IMAGE CENTERING
+   ========================= */
+
+.career-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* left content | right image */
+  gap: 60px;
+  align-items: center; /* VERTICAL ALIGNMENT */
+}
+
+.career-right {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+}
+
+.career-logo {
+  max-width: 110%;  /* ~10% bigger */
+  height: auto;
+}
+
+
+/* =========================
+   APPLICATION MODAL
+   ========================= */
+
+.application-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.application-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.application-box h3 {
+  color: #0f4c81;
+  margin-bottom: 8px;
+}
+
+.application-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+
+  background: transparent;   /* removes grey box */
+  border: none;               /* removes border */
+  padding: 0;                 /* removes extra space */
+  margin: 0;
+
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: #333;
+
+  outline: none;              /* removes focus outline */
+  box-shadow: none;           /* safety */
+}
+
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.submit-btn {
+  margin-top: 10px;
+  background: #0f4c81;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #083a7a;
+}
+/* =========================
+   RESUME REMOVE BUTTON
+   ========================= */
+
+.file-upload-wrapper {
+  position: relative;
+}
+
+.remove-file-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+  display: none; /* hidden by default */
+}
+
+.remove-file-btn:hover {
+  background: #c0392b;
+}
+
+/* =========================
+   CONTACT PAGE (ISOLATED)
+   ========================= */
+
+.contact-page {
+  padding-top: 5px;
+  background: #ffffff;
+}
+/* =========================
+   CONTACT PAGE – HEADING GAP FIX
+   Matches Career & About
+   ========================= */
+
+.contact-header h2 {
+  margin-bottom: 14px;   /* SAME as Career page */
+}
+
+.contact-header p {
+  margin-top: 0;
+  margin-bottom: 14px;
+  max-width: 700px;
+  color: #444;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.contact-person h4 {
+  color: #0f4c81;
+  margin-bottom: 6px;
+  font-size: 20px;     /* slightly bigger */
+  font-weight: 600;   /* more presence */
+}
+
+
+.contact-person .designation {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.contact-person p {
+  font-size: 14.5px;
+  margin-bottom: 4px;
+}
+
+/* Form Box */
+.contact-form-box {
+  background: #f7f9fc;
+  padding: 30px;
+  border-radius: 6px;
+}
+
+.contact-form-box h3 {
+  color: #0f4c81;
+  margin-bottom: 20px;
+}
+
+.contact-form-box .form-group {
+  margin-bottom: 14px;
+}
+
+.contact-form-box label {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contact-form-box input,
+.contact-form-box select,
+.contact-form-box textarea {
+  width: 100%;
+  padding: 10px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-note {
+  font-size: 13px;
+  color: #555;
+  margin-top: 12px;
+}
+
+/* =========================
+   CONTACT FORM – POLISH
+   ========================= */
+
+.contact-form-box {
+  background: #f1f4f8;      /* same family as career CTA */
+  padding: 34px;
+  border-radius: 8px;
+}
+
+.contact-form-box input,
+.contact-form-box select,
+.contact-form-box textarea {
+  border: 1px solid #d6dbe3;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-form-box input:focus,
+.contact-form-box select:focus,
+.contact-form-box textarea:focus {
+  outline: none;
+  border-color: #0f4c81;
+  box-shadow: 0 0 0 2px rgba(15, 76, 129, 0.12);
+}
+/* =========================
+   CONTACT PAGE – ADDRESS & GST
+   ========================= */
+
+.contact-address {
+  margin-bottom: 34px;
+}
+
+.contact-address h4 {
+  color: #0f4c81;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contact-address .address-text {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.contact-address .gst-text {
+  margin-top: 10px;
+  font-size: 14.5px;
+  color: #333;
+}
+/* =========================
+   CONTACT PAGE – CLEAN ADDRESS BLOCK
+   ========================= */
+
+.clean-address {
+  padding: 16px 18px;
+  margin-bottom: 36px;
+  background: #f7f9fc;                 /* same tone as form bg */
+  border-left: 4px solid #0f4c81;       /* matches site accent */
+  border-radius: 4px;
+}
+
+.clean-address h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f4c81;
+  margin-bottom: 10px;
+}
+
+.clean-address .address-text {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #1a1a1a;                      /* CLEAN BLACK */
+  margin-bottom: 8px;
+}
+
+.clean-address .address-text strong {
+  font-weight: 600;
+}
+
+.clean-address .gst-text {
+  font-size: 14.5px;
+  color: #1a1a1a;                      /* CLEAN BLACK */
+}
+
+/* =========================
+   SUCCESS MODAL
+   ========================= */
+
+.success-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.success-box {
+  background: #ffffff;
+  padding: 30px 34px;
+  border-radius: 8px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+.success-box h3 {
+  color: #0f4c81;
+  margin-bottom: 10px;
+}
+
+.success-box p {
+  color: #444;
+  font-size: 15px;
+  margin-bottom: 22px;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Mobile safe */
+@media (max-width: 768px) {
+  .full-width-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+
+/* RESPONSIVE */
+/* ABOUT GRID – MOBILE ONLY */
+@media (max-width: 640px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-slider {
+    margin-top: 24px;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-slider {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 32px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px;
+  }
+
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 12px;
+  }
+}
+/* =====================================================
+   MOBILE FINAL OVERRIDES – SP ENGINEERING WEBSITE
+   (SAFE TO PASTE AT END OF CSS)
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* GLOBAL */
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 20px 14px;
+  }
+
+  /* HEADER */
+  .header-flex {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 14px;
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: left;
+  }
+
+  .hero-text h2 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  /* SERVICES */
+  .service-list {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  /* ENGINEERING VISUAL */
+  .visual-wrapper {
+    transform: none !important;
+    opacity: 1 !important;
+    margin-top: 20px;
+  }
+
+  /* ABOUT (GLOBAL) */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-image,
+  .about-slider {
+    justify-self: center;
+    margin: 0 auto;
+  }
+
+  /* ABOUT PAGE – REMOVE FLOATING IMAGE */
+  .about-page .about-portrait-float {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 24px auto 0;
+  }
+
+  /* ABOUT PAGE SLIDER */
+  .about-page .about-slider {
+    max-width: 100%;
+    height: 300px;
+    margin-right: 0;
+  }
+
+  /* SERVICES PAGE */
+  .services-page .service-row,
+  .services-page .service-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .services-page .service-image {
+    width: 100%;
+    height: 260px;
+    justify-self: center;
+  }
+
+  /* CAREER PAGE */
+  .career-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .career-right {
+    margin-top: 24px;
+  }
+
+  .career-logo {
+    max-width: 260px;
+  }
+
+  /* CTA */
+  .full-width-cta {
+    padding: 24px;
+  }
+
+  /* APPLICATION MODAL */
+  .application-box {
+    max-width: 94%;
+    padding: 24px;
+  }
+
+  /* CONTACT PAGE */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-form-box {
+    padding: 22px;
+  }
+
+  /* FOOTER */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: left;
+  }
+
+  .footer {
+    padding: 40px 0 16px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
+
+/* EXTRA SMALL DEVICES (PHONES < 480px) */
+@media (max-width: 480px) {
+
+  .hero-text h2 {
+    font-size: 23px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .primary-btn,
+  .career-btn,
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-page .about-slider,
+  .services-page .service-image {
+    height: 220px;
+  }
+
+  .success-box {
+    max-width: 92%;
+    padding: 22px;
+  }
+}
+

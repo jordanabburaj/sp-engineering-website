@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Careers | SP Engineering Consultancy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-flex">
+    <a href="index.html" class="brand">
+      <img src="image/logo.png" class="logo-img">
+      <div>
+        <h1>SP Engineering Consultancy</h1>
+        <span>A COMPLETE MEP SOLUTIONS</span>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="career.html">Career</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="page-content">
+
+  <section class="career-page">
+    <div class="container">
+
+      <!-- =========================
+           TWO-COLUMN LAYOUT
+           ========================= -->
+      <div class="career-layout">
+
+        <!-- LEFT -->
+        <div class="career-left">
+
+          <div class="career-header">
+            <h2 class="section-title">Careers at SP Engineering Consultancy</h2>
+            <p>
+              We believe in building strong engineering professionals by providing
+              hands-on exposure to real-world projects and a collaborative environment.
+            </p>
+          </div>
+
+          <div class="career-section">
+            <h3>Why Work With Us</h3>
+            <ul class="career-points">
+              <li>✔ Exposure to live residential, commercial, and industrial projects</li>
+              <li>✔ Professional and learning-focused work culture</li>
+              <li>✔ Hands-on experience in site and design coordination</li>
+              <li>✔ Guidance from experienced engineers and consultants</li>
+            </ul>
+          </div>
+
+          <div class="career-section">
+            <h3>Current Opportunities</h3>
+            <ul class="career-roles">
+              <li>✔ Electrical Engineer – HT / LT</li>
+              <li>✔ Mechanical Engineer – HVAC & Fire Fighting</li>
+              <li>✔ Plumbing & Public Health Engineer</li>
+              <li>✔ Site Supervisor</li>
+              <li>✔ Internship Opportunities</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="career-right">
+          <img src="image/IMG_3726.png" alt="Career Logo" class="career-logo">
+        </div>
+
+      </div>
+
+      <!-- =========================
+           FULL-WIDTH CTA (FIXED)
+           ========================= -->
+      <div class="career-cta full-width-cta">
+        <p>Interested in joining our team?</p>
+        <button class="career-btn" onclick="openApplicationForm()">
+          Apply for Job / Internship
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="footer reveal-footer">
+  <div class="container footer-grid">
+
+    <!-- Column 1: About -->
+    <div class="footer-about">
+      <h3>SP Engineering Consultancy</h3>
+      <p>
+        SP Engineering Consultancy delivers compliant, efficient, and reliable
+        MEP engineering and statutory liaison solutions. With strong technical
+        expertise and hands-on coordination with authorities, we ensure smooth
+        approvals, reduced client effort, and seamless project execution from
+        planning to final clearance.
+      </p>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="/">Career</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Contact -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📍 Chennai, India</p>
+
+      <p>📧 info@ohmspeng.com</p>
+      <p>📧 bd@ohmspeng.com</p>
+      <p>📧 design@ohmspeng.com</p>
+
+      <p>📞 +91 9769755009</p>
+      <p>📞 +91 9003218716</p>
+      <p>📞 +91 8015519144</p>
+    </div>
+
+    <!-- Column 4: CTA + Hours -->
+    <div class="footer-cta">
+      <h4>Consultation</h4>
+      <p>Discuss your project requirements with our experts.</p>
+      <a href="contact.html" class="footer-btn">Request Consultation</a>
+
+      <div class="office-hours">
+        <strong>Office Hours</strong>
+        <p>Mon – Sat: 9:30 AM – 6:30 PM</p>
+        <p>Sunday: Closed</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 SP Engineering Consultancy. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  const footer = document.querySelector('.reveal-footer');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        footer.classList.add('active');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(footer);
+</script>
+
+
+<script>
+  let count = 0;
+  const target = 100;
+  const speed = 15; // smaller = faster
+
+  function startCounter() {
+    if (count < target) {
+      count++;
+      document.getElementById("projectCount").innerText = count;
+      setTimeout(startCounter, speed);
+    }
+  }
+
+  startCounter();
+</script>
+<script>
+  const visual = document.querySelector(".visual-wrapper");
+
+  window.addEventListener("scroll", () => {
+    const rect = visual.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight - 100) {
+      visual.classList.add("show");
+    }
+  });
+</script>
+
+<!-- APPLICATION MODAL -->
+<div id="applicationModal" class="application-modal">
+  <div class="application-box">
+
+    <!-- Close Button -->
+    <button type="button" class="close-btn" onclick="closeApplicationForm()">×</button>
+
+    <h3>Job / Internship Application</h3>
+    <p>Please fill in the details below. All fields marked * are mandatory.</p>
+
+    <!-- FORM -->
+    <form
+      id="applicationForm"
+      action="/apply"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+
+      <!-- Honeypot (BOT PROTECTION – DO NOT REMOVE) -->
+      <input
+        type="text"
+        name="company"
+        tabindex="-1"
+        autocomplete="off"
+        style="display:none"
+      >
+
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" name="name" maxlength="60" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" name="email" maxlength="70" required>
+      </div>
+
+      <div class="form-group">
+        <label>Mobile Number *</label>
+        <input
+          type="tel"
+          name="phone"
+          maxlength="10"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Applying For *</label>
+        <select name="type" required>
+          <option value="">Select</option>
+          <option value="Job">Job</option>
+          <option value="Internship">Internship</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Position Interested In *</label>
+        <input type="text" name="position" maxlength="50" required>
+      </div>
+
+      <div class="form-group">
+        <label>Upload Resume *</label>
+
+        <div class="file-upload-wrapper">
+          <input
+            type="file"
+            name="resume"
+            id="resumeInput"
+            accept=".pdf,.doc,.docx"
+            required
+            onchange="handleResumeUpload(this)"
+          >
+
+          <!-- Remove file button (hidden by default) -->
+          <button
+            type="button"
+            id="removeFileBtn"
+            class="remove-file-btn"
+            onclick="removeResume()"
+          >
+            ×
+          </button>
+        </div>
+
+        <small>Allowed formats: PDF, DOC, DOCX | Max size: 2 MB</small>
+      </div>
+
+      <div class="form-group">
+        <label>Message (Optional)</label>
+        <textarea name="message" rows="3" maxlength="700"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        Submit Application
+      </button>
+
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+function handleResumeUpload(input) {
+  const file = input.files[0];
+  const removeBtn = document.getElementById("removeFileBtn");
+
+  if (!file) {
+    removeBtn.style.display = "none";
+    return;
+  }
+
+  const maxSize = 2 * 1024 * 1024;
+  const allowedTypes = [
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  ];
+
+  if (file.size > maxSize) {
+    alert("Resume file size must be less than 2 MB.");
+    input.value = "";
+    removeBtn.style.display = "none";
+    return;
+  }
+
+  if (!allowedTypes.includes(file.type)) {
+    alert("Invalid file format. Please upload PDF, DOC, or DOCX only.");
+    input.value = "";
+    removeBtn.style.display = "none";
+    return;
+  }
+
+  removeBtn.style.display = "block";
+}
+
+function removeResume() {
+  const input = document.getElementById("resumeInput");
+  const removeBtn = document.getElementById("removeFileBtn");
+
+  input.value = "";
+  removeBtn.style.display = "none";
+}
+
+function closeApplicationForm() {
+  const modal = document.getElementById("applicationModal");
+  const form = document.getElementById("applicationForm");
+
+  const fields = form.querySelectorAll("input, select, textarea");
+
+  fields.forEach(field => {
+    if (field.type === "file") {
+      field.value = "";
+    } else if (field.tagName === "SELECT") {
+      field.selectedIndex = 0;
+    } else {
+      field.value = "";
+    }
+  });
+
+  const removeBtn = document.getElementById("removeFileBtn");
+  if (removeBtn) removeBtn.style.display = "none";
+
+  modal.style.display = "none";
+}
+
+function openApplicationForm() {
+  document.getElementById("applicationModal").style.display = "flex";
+}
+</script>
+<!-- SUCCESS MODAL -->
+<div id="successModal" class="success-modal">
+  <div class="success-box">
+    <h3 id="successTitle">Success</h3>
+    <p id="successMessage">Your request has been submitted successfully.</p>
+    <button class="career-btn" onclick="closeSuccessModal()">OK</button>
+  </div>
+</div>
+<script>
+function showSuccessModal(title, message) {
+  document.getElementById("successTitle").innerText = title;
+  document.getElementById("successMessage").innerText = message;
+  document.getElementById("successModal").style.display = "flex";
+}
+
+function closeSuccessModal() {
+  document.getElementById("successModal").style.display = "none";
+}
+</script>
+<script>
+document.getElementById("applicationForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  const response = await fetch("/apply", {
+    method: "POST",
+    body: formData
+  });
+
+  const result = await response.json();
+
+  if (result.success) {
+    closeApplicationForm(); // close application modal
+    showSuccessModal(
+      "Application Submitted",
+      "Thank you for applying. Our team will review your application and contact you shortly."
+    );
+    this.reset();
+  } else {
+    alert("Submission failed. Please try again later.");
+  }
+});
+</script>
+
+</body>
+</html>
