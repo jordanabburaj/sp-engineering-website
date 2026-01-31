@@ -1398,6 +1398,19 @@ section.about {
   margin-bottom: 22px;
 }
 
+/* Prevent mobile browsers from forcing blue color on phone numbers */
+.footer a[href^="tel"],
+.footer a[href^="mailto"] {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+/* Optional: hover effect for desktop */
+.footer a[href^="tel"]:hover,
+.footer a[href^="mailto"]:hover {
+  text-decoration: underline;
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
