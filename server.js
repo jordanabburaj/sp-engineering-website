@@ -8,6 +8,9 @@ const fs = require("fs");
 
 const app = express();
 
+app.set("trust proxy", 1);
+app.disable("x-powered-by");
+
 /* =========================
    BASIC SECURITY
    ========================= */
@@ -65,17 +68,16 @@ const upload = multer({
 });
 
 /* =========================
-   EMAIL TRANSPORTER
+   EMAIL TRANSPORTER (FIXED)
    ========================= */
 const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: Number(process.env.EMAIL_PORT),
-  secure: Number(process.env.EMAIL_PORT) === 465,
+  service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
+    pass: process.env.EMAIL_PASS,
+  },
 });
+
 
 /* =========================
    CAREER APPLICATION ROUTE
