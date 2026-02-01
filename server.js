@@ -87,53 +87,79 @@ app.post("/apply", limiter, upload.single("resume"), async (req, res) => {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
-    await transporter.sendMail({
-      from: `"SP Engineering Careers" <${process.env.EMAIL_USER}>`,
-      to: process.env.RECEIVER_EMAIL,
-      subject: `New ${type} Application – ${position}`,
-      html: `
-      <div style="font-family:Arial,Helvetica,sans-serif;background:#f4f6f8;padding:20px;">
-        <div style="max-width:600px;margin:auto;background:#fff;border-radius:6px;">
-          <div style="background:#1c3f60;color:#fff;padding:16px;">
-            <h2 style="margin:0;">SP Engineering Consultancy</h2>
-            <p style="margin:4px 0 0;">New Career Application</p>
-          </div>
-          <div style="padding:20px;">
-            <table width="100%" cellpadding="6">
-              <tr><td><strong>Name:</strong></td><td>${name}</td></tr>
-              <tr><td><strong>Email:</strong></td><td>${email}</td></tr>
-              <tr><td><strong>Phone:</strong></td><td>${phone}</td></tr>
-              <tr><td><strong>Type:</strong></td><td>${type}</td></tr>
-              <tr><td><strong>Position:</strong></td><td>${position}</td></tr>
-            </table>
-            <hr>
-            <p><strong>Message:</strong></p>
-            <p style="background:#f8f9fb;padding:12px;border-radius:4px;">
-              ${message || "N/A"}
-            </p>
-            <p>📎 Resume attached</p>
-          </div>
-          <div style="background:#f0f2f5;text-align:center;padding:10px;font-size:12px;">
-            Submitted via SP Engineering Website
-          </div>
-        </div>
-      </div>
-      `,
-      attachments: [
-        {
-          filename: req.file.originalname,
-          path: req.file.path
-        }
-      ]
-    });
+    // Read resume file and convert to Base64
+    const fileBuffer = fs.readFileSync(req.file.path);
+    const base64File = fileBuffer.toString("base64");
 
+    await axios.post(
+      "https://api.brevo.com/v3/smtp/email",
+      {
+        sender: {
+          name: "SP Engineering Careers",
+          email: "support@spengineeringandconsultancy.com"
+        },
+        to: [
+          {
+            email: process.env.RECEIVER_EMAIL,
+            name: "SP Engineering"
+          }
+        ],
+        replyTo: {
+          email,
+          name
+        },
+        subject: `New ${type} Application – ${position}`,
+        htmlContent: `
+          <div style="font-family:Arial;background:#f4f6f8;padding:20px;">
+            <div style="max-width:600px;margin:auto;background:#fff;border-radius:6px;">
+              <div style="background:#1c3f60;color:#fff;padding:16px;">
+                <h2>SP Engineering Consultancy</h2>
+                <p>New Career Application</p>
+              </div>
+              <div style="padding:20px;">
+                <table cellpadding="6">
+                  <tr><td><strong>Name:</strong></td><td>${name}</td></tr>
+                  <tr><td><strong>Email:</strong></td><td>${email}</td></tr>
+                  <tr><td><strong>Phone:</strong></td><td>${phone}</td></tr>
+                  <tr><td><strong>Type:</strong></td><td>${type}</td></tr>
+                  <tr><td><strong>Position:</strong></td><td>${position}</td></tr>
+                </table>
+                <hr>
+                <p><strong>Message:</strong></p>
+                <p style="background:#f8f9fb;padding:12px;">
+                  ${message || "N/A"}
+                </p>
+                <p>📎 Resume attached</p>
+              </div>
+            </div>
+          </div>
+        `,
+        attachment: [
+          {
+            name: req.file.originalname,
+            content: base64File
+          }
+        ]
+      },
+      {
+        headers: {
+          "api-key": process.env.BREVO_API_KEY,
+          "Content-Type": "application/json"
+        }
+      }
+    );
+
+    // Clean up uploaded file
     fs.unlink(req.file.path, () => {});
+
     res.json({ success: true, message: "Application submitted successfully" });
+
   } catch (err) {
-    console.error(err);
+    console.error("Brevo Career API error:", err.response?.data || err.message);
     res.status(500).json({ error: "Application submission failed" });
   }
 });
+
 
 /* =========================
    CONTACT FORM ROUTE
