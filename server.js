@@ -183,7 +183,7 @@ app.post("/contact-inquiry", limiter, async (req, res) => {
         },
         to: [
           {
-            email: "support@spengineeringandconsultancy.com",
+            email: process.env.RECEIVER_EMAIL,
             name: "SP Engineering"
           }
         ],

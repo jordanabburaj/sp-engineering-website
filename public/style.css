@@ -1830,6 +1830,40 @@ body.modal-open {
     font-size: 12px;
   }
 }
+/* =========================
+   FOOTER CONTACT ALIGNMENT
+   ========================= */
+
+.footer-contact {
+  padding-left: 8px;
+}
+
+.footer-contact .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.footer-contact .icon {
+  min-width: 18px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.footer-contact .text {
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+
+/* Mobile safety */
+@media (max-width: 768px) {
+  .footer-contact .text {
+    white-space: normal;
+  }
+}
 
 /* EXTRA SMALL DEVICES (PHONES < 480px) */
 @media (max-width: 480px) {
@@ -1860,3 +1894,124 @@ body.modal-open {
   }
 }
 
+/* =========================
+   CAREER APPLICATION FORM
+   CLEAN DESKTOP SHEET DESIGN
+   ========================= */
+@media (min-width: 992px) {
+
+  /* Modal backdrop */
+  .application-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    background: rgba(12, 25, 38, 0.6);
+    backdrop-filter: blur(5px);
+  }
+
+  /* Form sheet */
+  .application-box {
+    width: 100%;
+    max-width: 760px;
+
+    background: #ffffff;
+    border-radius: 14px;
+
+    /* INTERNAL SPACING */
+    padding: 48px 56px 52px;
+
+    /* Proper depth */
+    box-shadow:
+      0 25px 55px rgba(0, 0, 0, 0.18),
+      0 8px 18px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    /* IMPORTANT: scroll INSIDE the form */
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+
+  /* Header spacing */
+  .application-box h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .application-box p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 32px;
+  }
+
+  /* Form groups spacing */
+  .application-box .form-group {
+    margin-bottom: 22px;
+  }
+
+  /* Inputs INSIDE the sheet */
+  .application-box input,
+  .application-box select,
+  .application-box textarea {
+    width: 100%;
+    padding: 14px 14px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+
+  /* Textarea consistency */
+  .application-box textarea {
+    resize: vertical;
+  }
+
+  /* Submit button spacing */
+  .application-box .submit-btn {
+    margin-top: 28px;
+  }
+
+}
+/* =========================
+   CAREER FORM – CLOSE BUTTON FIX
+   ========================= */
+@media (min-width: 992px) {
+
+  /* Make form box positioning reference */
+  .application-box {
+    position: relative;
+  }
+
+  /* Close button INSIDE the white form */
+  .application-box .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f3f5;
+    color: #333;
+
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background 0.2s ease;
+  }
+
+  .application-box .close-btn:hover {
+    background: #e0e4e8;
+  }
+
+}
