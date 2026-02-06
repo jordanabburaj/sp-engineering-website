@@ -1941,6 +1941,64 @@ body.modal-open {
   justify-content: center;
 }
 
+/* ======================================
+   MOBILE HEADER FIX (LOGO + TITLE)
+   ====================================== */
+
+@media (max-width: 768px) {
+
+  .header-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand {
+    flex-direction: column;   /* stack logo + text */
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo-img {
+    width: 70px;   /* smaller logo for mobile */
+  }
+
+  .brand-title {
+    font-size: 20px;  /* slightly reduced */
+    line-height: 1.3;
+  }
+
+  .brand span {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 8px;
+  }
+
+}
+/* ======================================
+   MOBILE CONTACT CARD FIX
+   ====================================== */
+
+@media (max-width: 768px) {
+
+  .contact-person-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .contact-side-info {
+    width: 100%;        /* remove fixed width */
+    height: auto;       /* remove fixed height */
+  }
+
+  .contact-item .text {
+    white-space: normal;  /* allow wrapping on mobile */
+  }
+
+}
 
 
 
