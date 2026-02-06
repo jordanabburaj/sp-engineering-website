@@ -2091,6 +2091,31 @@ body.modal-open {
 .contact-item .text {
   overflow-wrap: anywhere;
 }
+/* ======================================
+   MOBILE EMAIL ALIGNMENT FIX
+   ====================================== */
+
+@media (max-width: 768px) {
+
+  .contact-item {
+    align-items: flex-start;   /* align icon to top */
+  }
+
+  .contact-item .icon {
+    margin-top: 3px;           /* slight visual balance */
+  }
+
+  .contact-item .text {
+    white-space: normal;       /* allow wrapping */
+    word-break: break-word;    /* break long emails properly */
+  }
+
+}
+@media (max-width: 768px) {
+  .contact-item .icon {
+    font-size: 14px;
+  }
+}
 
 /* =========================
    CAREER APPLICATION FORM
