@@ -55,10 +55,13 @@ html, body {
   width: 68px;
 }
 
-.brand h1 {
+.brand-title {
   font-size: 20px;
+  font-weight: 600;
   color: #0f4c81;
+  margin: 0;
 }
+
 
 .brand span {
   font-size: 12px;
@@ -281,7 +284,7 @@ section {
   position: relative;
 }
 
-.about h2 {
+.about h1 {
   margin-block-start: 0px;
   margin-bottom: 14px;
   color: #0f4c81;

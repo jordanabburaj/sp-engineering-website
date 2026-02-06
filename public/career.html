@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="format-detection" content="telephone=no">
-  <title>Careers | SP Engineering Consultancy</title>
+  <title>Careers in MEP Engineering | SP Engineering & Consultancy</title>
+  <meta name="description" content="Join SP Engineering & Consultancy and build your career in MEP engineering, electrical, plumbing, mechanical, solar, and liaison services. Explore current opportunities and grow with our professional team.">
+  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -15,7 +17,7 @@
     <a href="index.html" class="brand">
       <img src="image/logo.png" class="logo-img">
       <div>
-        <h1>SP Engineering & Consultancy</h1>
+        <div class="brand-title">SP Engineering & Consultancy</div>
         <span>A COMPLETE MEP SOLUTIONS</span>
       </div>
     </a>
@@ -42,7 +44,7 @@
         <div class="career-left">
 
           <div class="career-header">
-            <h2 class="section-title">Careers at SP Engineering Consultancy</h2>
+            <h1 class="section-title">Careers at SP Engineering Consultancy</h1>
             <p>
               We believe in building strong engineering professionals by providing
               hands-on exposure to real-world projects and a collaborative environment.
@@ -196,33 +198,7 @@
 </script>
 
 
-<script>
-  let count = 0;
-  const target = 100;
-  const speed = 15; // smaller = faster
 
-  function startCounter() {
-    if (count < target) {
-      count++;
-      document.getElementById("projectCount").innerText = count;
-      setTimeout(startCounter, speed);
-    }
-  }
-
-  startCounter();
-</script>
-<script>
-  const visual = document.querySelector(".visual-wrapper");
-
-  window.addEventListener("scroll", () => {
-    const rect = visual.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    if (rect.top < windowHeight - 100) {
-      visual.classList.add("show");
-    }
-  });
-</script>
 
 <!-- APPLICATION MODAL -->
 <div id="applicationModal" class="application-modal">
