@@ -52,21 +52,25 @@ html, body {
 }
 
 .logo-img {
-  width: 68px;
+  width: 88px;
 }
 
 .brand-title {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 700;
   color: #0f4c81;
   margin: 0;
 }
 
 
 .brand span {
-  font-size: 12px;
+  display: block;
+  font-size: 14px;
   color: #555;
+  text-align: center;   /* centers the tagline */
+  margin-top: 4px;
 }
+
 
 nav a {
   margin-left: 24px;
@@ -1210,6 +1214,7 @@ section.about {
 }
 
 .contact-layout {
+  align-items: start; 
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 60px;
@@ -1896,6 +1901,74 @@ body.modal-open {
     padding: 22px;
   }
 }
+/* =========================
+   CONTACT PERSON CARD STYLE
+   ========================= */
+
+.contact-person-card {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 30px;
+  padding: 24px;
+  margin-bottom: 40px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  border-left: 4px solid #0f4c81;
+
+  align-items: stretch; /* IMPORTANT */
+}
+
+
+.contact-main h3 {
+  color: #0f4c81;
+  margin-bottom: 6px;
+}
+
+.contact-side-info {
+  background: #f7f9fc;
+  padding: 16px 18px;
+  border-radius: 8px;
+
+  width: 240px;          /* FIXED WIDTH */
+  height: 150px;         /* FIXED HEIGHT */
+
+  font-size: 13px;       /* slightly smaller */
+  line-height: 1.4;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .contact-person-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-side-info {
+    margin-top: 15px;
+  }
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.contact-item .icon {
+  min-width: 18px;
+}
+
+.contact-item .text {
+  white-space: nowrap;
+}
+
 
 /* =========================
    CAREER APPLICATION FORM
