@@ -2238,3 +2238,38 @@ body.modal-open {
   }
 
 }
+/* ======================================
+   ANDROID HEADER STABILITY PATCH
+   (Safe – Does NOT change desktop)
+   ====================================== */
+
+/* Prevent Android text auto-scaling */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Keep brand title stable */
+.brand-title {
+  white-space: nowrap;
+}
+
+/* Prevent header layout jump */
+.header-flex {
+  flex-wrap: wrap;
+}
+
+/* If screen is very small, allow safe wrapping */
+@media (max-width: 380px) {
+  .brand-title {
+    white-space: normal;
+    font-size: 16px;
+  }
+}
+
+/* Extra Android font stability */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
