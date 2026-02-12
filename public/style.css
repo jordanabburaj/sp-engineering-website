@@ -123,7 +123,7 @@ section {
 
 .hero-text p {
   margin-bottom: 30px;
-  color: #444;
+  color: #1a1a1a;
 }
 
 .primary-btn {
@@ -228,7 +228,7 @@ section {
 .career p {
   max-width: 800px;
   margin: 0 auto;
-  color: #444;
+  color: #1a1a1a;
   line-height: 1.8;
 }
 
@@ -282,11 +282,53 @@ section {
 }
 
 /* WHY CHOOSE US */
-.about {
+/* =========================
+   WHY CHOOSE US – FIXED
+   ========================= */
+
+section.about {
   background: #ffffff;
-  padding: 30px 0 0px;
-  position: relative;
+  padding: 70px 0 60px; /* matches other sections */
 }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text p {
+  margin-top: 0px;
+  margin-bottom: 20px; /* proper spacing under heading */
+  max-width: 620px;
+  line-height: 1.7;
+  color: #1a1a1a;
+}
+
+.about-points {
+  margin-top: 15px;
+  padding-left: 0;
+}
+
+.about-points li {
+  list-style: none;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  display: block;
+}
+
+.about-image {
+  justify-self: end;
+}
+
 
 .about h1 {
   margin-block-start: 0px;
@@ -308,6 +350,7 @@ section {
 
 .about p {
   max-width: 600px;
+  color: #1a1a1a;  
 }
 
 .about-points ul {
@@ -509,6 +552,7 @@ section.about {
 .commitment {
   background: #ffffff;
   padding: 0px 0 50px;
+  margin-top: -50px; /* negative margin to pull it up closer to Industries We Serve */
 }
 
 .commitment-title {
@@ -712,7 +756,7 @@ section.about {
 .about-page .about-portrait-float {
   position: absolute;
   right: 165px;
-  top: 1070px;
+  top: 1125px;
   width: 420px;
   height: 640px;
   z-index: 10;
@@ -782,7 +826,7 @@ section.about {
 .services-page .service-text p {
   max-width: 620px;
   margin-bottom: 12px;
-  font-size: 15.5px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -903,7 +947,7 @@ section.about {
   margin-top: 0;
   margin-bottom: 14px;
   max-width: 600px;
-  color: #444;
+  color: #1a1a1a;
   line-height: 1.6;
 }
 
@@ -1210,7 +1254,7 @@ section.about {
   margin-top: 0;
   margin-bottom: 14px;
   max-width: 700px;
-  color: #444;
+  color: #1a1a1a;
 }
 
 .contact-layout {
@@ -1401,7 +1445,7 @@ section.about {
 }
 
 .success-box p {
-  color: #444;
+  color: #1a1a1a;
   font-size: 15px;
   margin-bottom: 22px;
 }
@@ -2272,4 +2316,8 @@ html {
   body {
     font-size: 16px;
   }
+}
+.about-page h2 {
+  color: #0f4c81;
+  margin-bottom: 14px;
 }
