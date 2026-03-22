@@ -18,7 +18,7 @@ html, body {
 }
 
 .page-content {
-  flex: 1;
+  flex: unset;
 }
 
 /* PAGE SYSTEM */
@@ -2320,4 +2320,8 @@ html {
 .about-page h2 {
   color: #0f4c81;
   margin-bottom: 14px;
+}
+/* Alternative fix if padding doesn't work */
+.about-page .page-content {
+  padding-bottom: 80px;
 }
