@@ -24,7 +24,13 @@
         <span>A COMPLETE MEP SOLUTIONS</span>
       </div>
     </a>
-    <nav>
+        <!-- HAMBURGER -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>  
+    <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
@@ -337,6 +343,21 @@
 
   observer.observe(footer);
 </script>
+<script>
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("navMenu");
 
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+  hamburger.classList.toggle("active"); // for animation
+});
+
+document.addEventListener("click", (e) => {
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove("active");
+    hamburger.classList.remove("active");
+  }
+});
+</script>
 </body>
 </html>

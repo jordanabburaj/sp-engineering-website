@@ -2589,3 +2589,369 @@ html {
   transform: scale(1.1);
   box-shadow: 0 14px 30px rgba(0,0,0,0.4);
 }
+/* =========================
+   HAMBURGER MENU (PREMIUM)
+   ========================= */
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #0f4c81;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* =========================
+   MOBILE NAV
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide normal nav */
+  
+
+  nav a {
+    display: block;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  /* Overlay background */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 998;
+  }
+
+}
+/* =========================
+   HAMBURGER MENU FIX
+   ========================= */
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #0f4c81;
+  display: block;
+  border-radius: 2px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  
+
+  nav a {
+    padding: 10px 0;
+  }
+}
+/* =========================
+   PREMIUM MOBILE MENU EFFECT (SAFE)
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* Keep header as anchor */
+  .header {
+    position: relative;
+    z-index: 1000;
+  }
+
+  /* Dropdown menu base */
+  #navMenu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 10px;
+    width: 230px;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.06);
+
+    box-shadow:
+      0 12px 30px rgba(0,0,0,0.12),
+      0 4px 12px rgba(0,0,0,0.06);
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+    pointer-events: none;
+
+    transition: all 0.25s ease;
+  }
+
+  /* ACTIVE STATE */
+  #navMenu.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  /* Links */
+  #navMenu a {
+    padding: 14px 18px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+  }
+
+  #navMenu a:last-child {
+    border-bottom: none;
+  }
+
+  /* Hover effect */
+  #navMenu a:hover {
+    background: rgba(15, 76, 129, 0.08);
+    padding-left: 22px;
+  }
+
+  /* Hamburger animation */
+  #hamburger span {
+    transition: all 0.3s ease;
+  }
+
+  #hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+/* =========================
+   FINAL PREMIUM DROPDOWN MENU
+   ========================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #0f4c81;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* MOBILE ONLY */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* NAV DROPDOWN */
+  #navMenu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 10px;
+    width: 230px;
+
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(15px);
+
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.06);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  #navMenu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  #navMenu a {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  #navMenu a:last-child {
+    border-bottom: none;
+  }
+
+  #navMenu a:hover {
+    background: rgba(15,76,129,0.08);
+  }
+
+  /* HAMBURGER ANIMATION */
+  #hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+/* FORCE MENU TO RIGHT SIDE (FINAL FIX) */
+@media (max-width: 768px) {
+
+  .header {
+    position: relative;
+  }
+
+  #navMenu {
+    position: absolute !important;
+    top: 70px !important;      /* below header */
+    right: 10px !important;    /* stick to right */
+    left: auto !important;     /* prevent centering */
+
+    width: 220px;
+
+    margin: 0;
+    align-items: stretch;      /* prevent center alignment */
+
+    transform-origin: top right; /* smooth animation from right */
+  }
+
+}
+#navMenu {
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+@media (max-width: 768px) {
+
+  .header {
+    position: relative;
+  }
+
+  /* MENU COMES FROM HAMBURGER */
+  #navMenu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 10px;            /* 🔥 change from RIGHT → LEFT */
+    right: auto;           /* important */
+
+    width: 230px;
+
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(15px);
+
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  #navMenu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+}
+/* =========================
+   🔥 FORCE LEFT MENU (ULTIMATE FIX)
+   ========================= */
+
+@media (max-width: 768px) {
+
+  #navMenu {
+    position: absolute !important;
+
+    top: calc(100% + 8px) !important;
+
+    left: 12px !important;     /* ✅ FORCE LEFT */
+    right: auto !important;    /* ❌ kill right */
+
+    width: 230px !important;
+
+    margin: 0 !important;
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(16px);
+
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+
+    transform-origin: top left !important; /* 🔥 animation from left */
+
+    z-index: 9999;
+  }
+
+}
+/* =========================
+   REMOVE DESKTOP NAV BACKGROUND
+   ========================= */
+
+@media (min-width: 769px) {
+
+  nav {
+    background: transparent !important;   /* ❌ remove white */
+    box-shadow: none !important;          /* ❌ remove glow */
+    border-radius: 0 !important;          /* ❌ remove pill shape */
+    padding: 0 !important;
+  }
+
+  nav a {
+    background: none !important;
+  }
+
+}
