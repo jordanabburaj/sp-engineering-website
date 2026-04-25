@@ -2325,3 +2325,267 @@ html {
 .about-page .page-content {
   padding-bottom: 80px;
 }
+.digital-section {
+  padding-top: 10px;
+  margin-top: -70px;
+}
+/* Reduce gap before Digital section */
+.services-page .services:last-of-type {
+  margin-top: -90px;
+  padding-top: 20px;
+}
+/* Ensure consistent alignment for service rows */
+.service-row {
+  align-items: center;
+}
+
+/* Fix image size consistency */
+.service-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+/* Fix Digital section layout consistency */
+.services-page .services:last-of-type .service-row {
+  margin-top: 20px;
+}
+/* Reduce gap below section title */
+.services .section-title {
+  margin-bottom: 20px; /* reduce this value if needed */
+}
+
+/* Reduce space before first service row */
+.services .service-row {
+  margin-top: 10px;
+}
+/* ===== FIX DIGITAL SERVICE IMAGE FIT ===== */
+
+.service-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.service-slider {
+  width: 100%;
+  height: 100%;
+}
+
+.service-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* ===== MAKE DIGITAL IMAGE LANDSCAPE ONLY ===== */
+
+.services-page .services:last-of-type .service-image {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;   /* 🔥 forces landscape */
+  height: auto;           /* override old fixed height */
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.services-page .services:last-of-type .service-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  font-size: 20px;
+  padding: 14px 16px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+/* =====================================
+   🔥 RECENT WORK – COMPLETE FIX
+   ===================================== */
+
+/* 1. REMOVE SPACE ABOVE SECTION */
+.services-page .services {
+  padding-top: 10px;   /* reduce from 80px */
+  padding-bottom: 40px;
+}
+
+/* 2. REMOVE EXTRA GAP BETWEEN TITLE & CONTENT */
+.services-page .services .section-title {
+  margin-bottom: 10px;
+}
+
+/* 3. REMOVE GAP ABOVE ROW */
+.services-page .services .service-row {
+  margin-top: 0;
+}
+
+/* 4. ALIGN TEXT + IMAGE PERFECTLY */
+.service-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;              /* reduce space */
+  align-items: center;
+}
+
+/* 5. 🔥 FORCE LANDSCAPE IMAGE (RECTANGLE) */
+.service-image {
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 16 / 9;   /* 🔥 KEY LINE */
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* 6. IMAGE FIT */
+.service-image img,
+.service-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 7. FIX SLIDER HEIGHT */
+.service-slider {
+  width: 100%;
+  height: 100%;
+}
+
+/* 8. REMOVE EXTRA GAP BELOW TEXT */
+.service-text p {
+  margin-bottom: 14px;
+}
+
+/* 9. OPTIONAL: MOVE IMAGE SLIGHTLY LEFT (closer) */
+.service-image {
+  justify-self: end;
+}/* =====================================
+   🚨 FORCE LANDSCAPE FIX (OVERRIDE ALL)
+   ===================================== */
+
+.service-image.landscape-fix {
+  width: 100% !important;
+  max-width: 700px !important;
+
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;   /* 🔥 FORCE RECTANGLE */
+
+  overflow: hidden !important;
+  border-radius: 16px !important;
+
+  display: block !important;
+}
+
+/* kill any old fixed height */
+.services-page .service-image {
+  height: auto !important;
+}
+
+/* image fill */
+.landscape-fix img,
+.landscape-fix .service-slide {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* slider full height */
+.landscape-fix .service-slider {
+  width: 100%;
+  height: 100%;
+}
+/* IMAGE VERTICAL CONTROL */
+.service-image {
+  transform: translateY(-25px); /* 🔥 change this value */
+}
+/* MOVE FULL SECTION WITHOUT BREAKING LAYOUT */
+.digital-platform-section {
+  margin-top: -20px;   /* 🔥 move UP */
+}
+/* =========================
+   MOVE ONLY DIGITAL SERVICES UP
+   ========================= */
+
+.digital-services-fix {
+  margin-top: -60px;   /* move section UP */
+  padding-top: 20px;   /* keep internal spacing clean */
+}
+
+/* remove extra space above title */
+.digital-services-fix .section-title {
+  margin-top: 0;
+}
+.digital-services-fix .section-title {
+  margin-bottom: 18px !important;
+}
+ /* =========================
+   RECENT WORK FIX (NO BREAK)
+   ========================= */
+
+.recent-work-fix {
+  padding-top: 10px !important;  /* reduce top space */
+  margin-top: -40px;             /* move entire section UP */
+}
+
+/* Move entire content properly (REAL spacing, no break) */
+.recent-work-fix .service-row {
+  margin-top: -20px;             /* 🔼 moves content UP safely */
+}
+
+/* Clean title spacing */
+.recent-work-fix .section-title {
+  margin-top: 0;
+}
+/* FORCE move "Why Choose" section UP */
+.services-page .commitment {
+  margin-top: -70px !important;
+  padding-top: 0 !important;
+}
+/* ===== WHATSAPP FLOAT BUTTON (FINAL FIX) ===== */
+
+.whatsapp-float {
+  position: fixed;
+
+  bottom: 40px;   /* 🔼 move UP (increase = more up) */
+  right: 30px;    /* 🔽 move LEFT (increase = more left spacing) */
+
+  width: 70px;    /* 🔥 bigger size */
+  height: 70px;
+
+  background: #25D366;
+  border-radius: 50%;   /* perfect circle */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 9999;
+
+  transition: all 0.3s ease;
+}
+
+/* WhatsApp icon */
+.whatsapp-float img {
+  width: 38px;
+  height: 38px;
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.4);
+}
