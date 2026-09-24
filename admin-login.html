@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Admin Login | SP Engineering & Consultancy</title>
+
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+      linear-gradient(
+        135deg,
+        #f4f7fb 0%,
+        #eef3f8 100%
+      );
+
+    font-family: "Poppins", sans-serif;
+  }
+
+
+  /* =========================
+     LOGIN CARD
+     ========================= */
+
+  .admin-login-card {
+    width: 100%;
+    max-width: 440px;
+
+    background: #ffffff;
+
+    padding: 42px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e5eaf0;
+
+    box-shadow:
+      0 15px 45px rgba(15, 76, 129, 0.10);
+  }
+
+
+  /* =========================
+     BRAND
+     ========================= */
+
+  .admin-brand {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+.admin-brand-logo {
+  width: 110px !important;
+  height: 110px !important;
+  margin: 0 auto 18px !important;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden !important;
+  position: relative;
+}
+
+.admin-brand-logo img {
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: 110px !important;
+  max-height: 110px !important;
+
+  object-fit: contain !important;
+  display: block !important;
+}
+
+  .admin-brand h1 {
+    margin: 0;
+
+    color: #0f4c81;
+
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .admin-brand p {
+    margin: 7px 0 0;
+
+    color: #777;
+
+    font-size: 13px;
+  }
+
+
+  /* =========================
+     FORM
+     ========================= */
+
+  .admin-login-card label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #333;
+
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .admin-login-card input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d9dfe6;
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #222;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .admin-login-card input:focus {
+    border-color: #0f4c81;
+
+    box-shadow:
+      0 0 0 3px rgba(15, 76, 129, 0.10);
+  }
+
+
+  /* =========================
+     PASSWORD TOGGLE
+     ========================= */
+
+  .password-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .password-wrapper input {
+    padding-right: 70px;
+  }
+
+  .password-toggle {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #0f4c81;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    padding: 5px;
+  }
+
+  .password-toggle:hover {
+    color: #083a7a;
+  }
+
+
+  /* =========================
+     LOGIN BUTTON
+     ========================= */
+
+  .admin-login-card button[type="submit"] {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #0f4c81;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .admin-login-card button[type="submit"]:hover {
+    background: #083a7a;
+
+    transform: translateY(-1px);
+  }
+
+  .admin-login-card button[type="submit"]:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+  }
+
+
+  /* =========================
+     ERROR MESSAGE
+     ========================= */
+
+  .login-error {
+    margin-top: 15px;
+
+    padding: 11px 13px;
+
+    border-radius: 6px;
+
+    background: #fff1f1;
+
+    border: 1px solid #f1cccc;
+
+    color: #c62828;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    display: none;
+  }
+
+
+  /* =========================
+     SECURITY NOTE
+     ========================= */
+
+  .admin-security-note {
+    margin-top: 22px;
+
+    text-align: center;
+
+    color: #888;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+    /* Admin login logo size fix */
+  .admin-brand .admin-brand-logo {
+    width: 110px !important;
+    height: 110px !important;
+    max-width: 110px !important;
+    max-height: 110px !important;
+    overflow: hidden !important;
+    margin: 0 auto 18px !important;
+  }
+
+  .admin-brand .admin-brand-logo img {
+    width: 110px !important;
+    height: 110px !important;
+    max-width: 110px !important;
+    max-height: 110px !important;
+    object-fit: contain !important;
+  }
+
+
+  /* =========================
+     MOBILE
+     ========================= */
+
+  @media (max-width: 520px) {
+
+    body {
+      padding: 18px;
+    }
+
+    .admin-login-card {
+      padding: 30px 22px;
+
+      border-radius: 12px;
+    }
+
+    .admin-brand h1 {
+      font-size: 22px;
+    }
+
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="admin-login-card">
+
+  <div class="admin-brand">
+
+    <div class="admin-brand-logo">
+        <img
+            src="/image/logo.png"
+            alt="SP Engineering & Consultancy"
+        >
+    </div>
+
+    <h1>
+      Admin Login
+    </h1>
+
+    <p>
+      SP Engineering & Consultancy
+    </p>
+
+    <form id="adminLoginForm">
+
+      <label for="username">
+        Username
+      </label>
+
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        autocomplete="username"
+      >
+
+        <label for="password">
+        Password
+        </label>
+
+        <div class="password-wrapper">
+
+        <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            autocomplete="current-password"
+        >
+
+        <button
+            type="button"
+            class="password-toggle"
+            id="passwordToggle"
+        >
+            Show
+        </button>
+
+        </div>
+
+      <button type="submit" id="loginButton">
+        Login
+      </button>
+
+      <div
+        id="loginError"
+        class="login-error"
+      ></div>
+      <div class="admin-security-note">
+        Authorized administrators only.
+        Your session is protected.
+        </div>
+
+    </form>
+
+  </div>
+
+
+<script>
+
+document
+  .getElementById("adminLoginForm")
+  .addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const button =
+      document.getElementById("loginButton");
+
+    const error =
+      document.getElementById("loginError");
+
+    error.style.display = "none";
+
+    button.disabled = true;
+    button.textContent = "Logging in...";
+
+    try {
+
+      const username =
+        document.getElementById("username").value;
+
+      const password =
+        document.getElementById("password").value;
+
+      const response = await fetch("/admin/login", {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          username,
+          password
+        })
+      });
+
+      const result =
+        await response.json();
+
+      if (!response.ok || !result.success) {
+
+        throw new Error(
+          result.error ||
+          "Invalid username or password."
+        );
+      }
+
+      window.location.href =
+        "/admin-reviews.html";
+
+    } catch (err) {
+
+      error.textContent = err.message;
+      error.style.display = "block";
+
+    } finally {
+
+      button.disabled = false;
+      button.textContent = "Login";
+
+    }
+
+  });
+
+  document
+  .getElementById("passwordToggle")
+  .addEventListener("click", function() {
+
+    const passwordInput =
+      document.getElementById("password");
+
+    if (passwordInput.type === "password") {
+
+      passwordInput.type = "text";
+
+      this.textContent = "Hide";
+
+    } else {
+
+      passwordInput.type = "password";
+
+      this.textContent = "Show";
+
+    }
+
+  });
+
+</script>
+
+</body>
+</html>

@@ -69,6 +69,7 @@
       <a href="services.html">Services</a>
       <a href="digital-solutions.html">Digital Solutions</a>
       <a href="career.html">Career</a>
+      <a href="reviews.html">Reviews</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -305,6 +306,34 @@
     </p>
   </div>
 </section>
+<!-- LATEST CLIENT REVIEWS -->
+<section class="latest-reviews">
+  <div class="container">
+
+    <h2 class="section-title">What Our Clients Say</h2>
+
+    <p class="latest-reviews-subtitle">
+      What our clients say about working with us
+    </p>
+
+    <div class="latest-reviews-grid" id="latestReviewsContainer">
+      <p class="reviews-loading">Loading client reviews...</p>
+    </div>
+
+    <div class="latest-reviews-action">
+
+      <a href="reviews.html" class="latest-review-btn">
+        View All Reviews
+      </a>
+
+      <a href="reviews.html" class="latest-review-btn secondary">
+        Write a Review
+      </a>
+
+    </div>
+
+  </div>
+</section>
 </main>
 <footer class="footer reveal-footer">
   <div class="container footer-grid">
@@ -451,6 +480,131 @@ document.addEventListener("click", (e) => {
     hamburger.classList.remove("active");
   }
 });
+</script>
+<script>
+  /* =========================
+     LOAD LATEST 5 REVIEWS
+     ========================= */
+
+  async function loadLatestReviews() {
+
+    const container =
+      document.getElementById("latestReviewsContainer");
+
+    try {
+
+      const response =
+        await fetch("/api/reviews");
+
+      const result =
+        await response.json();
+
+      if (!result.success) {
+        throw new Error("Unable to load reviews.");
+      }
+
+      const reviews =
+        (result.reviews || [])
+          .sort(
+            (a, b) =>
+              new Date(b.createdAt) -
+              new Date(a.createdAt)
+          )
+          .slice(0, 5);
+
+      /* No reviews yet */
+      if (reviews.length === 0) {
+
+        container.innerHTML = `
+          <p class="reviews-empty">
+            No client reviews have been published yet.
+          </p>
+        `;
+
+        return;
+      }
+
+      container.innerHTML = "";
+
+      reviews.forEach(review => {
+
+        const card =
+          document.createElement("article");
+
+        card.className =
+          "latest-review-card";
+
+        const stars =
+          "★".repeat(review.rating) +
+          "☆".repeat(5 - review.rating);
+
+        const date =
+          new Date(review.createdAt)
+            .toLocaleDateString(
+              "en-IN",
+              {
+                month: "short",
+                year: "numeric"
+              }
+            );
+
+        card.innerHTML = `
+
+          <div class="latest-review-stars">
+            ${stars}
+          </div>
+
+          <p class="latest-review-text">
+            ${escapeLatestReviewHtml(review.feedback)}
+          </p>
+
+          <p class="latest-review-author">
+            — ${escapeLatestReviewHtml(review.name)}
+          </p>
+
+          <span class="latest-review-date">
+            ${date}
+          </span>
+
+        `;
+
+        container.appendChild(card);
+
+      });
+
+    } catch (error) {
+
+      console.error(
+        "Latest reviews error:",
+        error
+      );
+
+      container.innerHTML = `
+        <p class="reviews-empty">
+          Unable to load client reviews at the moment.
+        </p>
+      `;
+    }
+  }
+
+
+  /* Prevent HTML injection */
+  function escapeLatestReviewHtml(value) {
+
+    const div =
+      document.createElement("div");
+
+    div.textContent =
+      value;
+
+    return div.innerHTML;
+  }
+
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    loadLatestReviews
+  );
 </script>
 </body>
 </html>
