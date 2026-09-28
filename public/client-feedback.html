@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>Client Feedback | SP Engineering & Consultancy</title>
+
+  <meta
+    name="description"
+    content="Share your feedback with SP Engineering & Consultancy."
+  >
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="/image/favicon.ico"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background: #f4f7fa;
+      color: #1f2933;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 16px;
+    }
+
+    .feedback-wrapper {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .feedback-card {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow:
+        0 10px 35px rgba(15, 42, 68, 0.10);
+      overflow: hidden;
+      border: 1px solid #e5ebf0;
+    }
+
+    .feedback-header {
+      text-align: center;
+      padding: 34px 30px 28px;
+      background: #ffffff;
+    }
+
+    .brand-logo {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 16px;
+    }
+
+    .company-name {
+      margin: 0;
+      font-size: 21px;
+      font-weight: 600;
+      color: #0f2a44;
+      line-height: 1.35;
+    }
+
+    .form-title {
+      margin: 25px 0 8px;
+      font-size: 27px;
+      font-weight: 600;
+      color: #0f2a44;
+    }
+
+    .form-subtitle {
+      margin: 0 auto;
+      max-width: 430px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #687684;
+    }
+
+    .feedback-form-area {
+      padding: 30px;
+      border-top: 1px solid #edf1f4;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #263746;
+    }
+
+    .required {
+      color: #b42318;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      border: 1px solid #d4dde5;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #1f2933;
+      font-family: inherit;
+      font-size: 15px;
+      padding: 12px 14px;
+      outline: none;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .form-input {
+      height: 46px;
+    }
+
+    .form-textarea {
+      min-height: 135px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: #0f4c81;
+      box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.10);
+    }
+
+    .rating-input {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: 3px;
+    }
+
+    .rating-input input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .rating-input label {
+      font-size: 38px;
+      line-height: 1;
+      color: #d3dbe2;
+      cursor: pointer;
+      transition: color 0.15s ease;
+      user-select: none;
+    }
+
+    .rating-input label:hover,
+    .rating-input label:hover ~ label,
+    .rating-input input:checked ~ label {
+      color: #e3a72f;
+    }
+
+    .submit-button {
+      width: 100%;
+      min-height: 48px;
+      border: 0;
+      border-radius: 8px;
+      background: #0f4c81;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition:
+        background 0.2s ease,
+        transform 0.1s ease,
+        opacity 0.2s ease;
+    }
+
+    .submit-button:hover {
+      background: #0c3d68;
+    }
+
+    .submit-button:active {
+      transform: translateY(1px);
+    }
+
+    .submit-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.65;
+    }
+
+    .form-note {
+      margin: 14px 0 0;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #7a8792;
+    }
+
+    .review-success {
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid #edf1f4;
+    }
+
+    .success-icon {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #edf7f0;
+      color: #287a45;
+      font-size: 27px;
+      font-weight: 600;
+    }
+
+    .review-success h2 {
+      margin: 0 0 10px;
+      color: #0f2a44;
+      font-size: 23px;
+      font-weight: 600;
+    }
+
+    .review-success p {
+      max-width: 430px;
+      margin: 8px auto;
+      color: #687684;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .google-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 18px;
+      padding: 0 22px;
+      border-radius: 8px;
+      background: #0f4c81;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .google-button:hover {
+      background: #0c3d68;
+    }
+
+    .feedback-footer {
+      text-align: center;
+      padding: 18px 25px 24px;
+      color: #8a96a0;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .feedback-footer strong {
+      color: #687684;
+      font-weight: 500;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px 10px;
+        align-items: flex-start;
+      }
+
+      .feedback-card {
+        margin-top: 10px;
+        border-radius: 12px;
+      }
+
+      .feedback-header {
+        padding: 28px 22px 24px;
+      }
+
+      .feedback-form-area {
+        padding: 24px 20px;
+      }
+
+      .form-title {
+        font-size: 24px;
+      }
+
+      .rating-input label {
+        font-size: 35px;
+      }
+
+      .review-success {
+        padding: 26px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="feedback-wrapper">
+
+    <div class="feedback-card">
+
+      <!-- HEADER -->
+
+      <header class="feedback-header">
+
+        <img
+          src="/image/logo.png"
+          class="brand-logo"
+          alt="SP Engineering & Consultancy"
+        >
+
+        <h1 class="company-name">
+          SP Engineering & Consultancy
+        </h1>
+
+        <h2 class="form-title">
+          Client Feedback
+        </h2>
+
+        <p class="form-subtitle">
+          We value your experience. Please take a moment
+          to share your feedback with us.
+        </p>
+
+      </header>
+
+
+      <!-- FORM -->
+
+      <div
+        id="formArea"
+        class="feedback-form-area"
+      >
+
+        <form
+          id="reviewForm"
+          method="POST"
+          action="/submit-review"
+        >
+
+          <!-- Anti-spam honeypot -->
+
+          <input
+            type="text"
+            name="website"
+            tabindex="-1"
+            autocomplete="off"
+            style="display:none"
+          >
+
+
+          <!-- NAME -->
+
+          <div class="form-group">
+
+            <label
+              for="reviewName"
+              class="form-label"
+            >
+              Full Name <span class="required">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="reviewName"
+              name="name"
+              class="form-input"
+              maxlength="60"
+              autocomplete="name"
+              required
+            >
+
+          </div>
+
+
+          <!-- RATING -->
+
+          <div class="form-group">
+
+            <label class="form-label">
+              Your Rating <span class="required">*</span>
+            </label>
+
+            <div class="rating-input">
+
+              <input
+                type="radio"
+                id="star5"
+                name="rating"
+                value="5"
+                required
+              >
+              <label for="star5" title="5 stars">★</label>
+
+
+              <input
+                type="radio"
+                id="star4"
+                name="rating"
+                value="4"
+              >
+              <label for="star4" title="4 stars">★</label>
+
+
+              <input
+                type="radio"
+                id="star3"
+                name="rating"
+                value="3"
+              >
+              <label for="star3" title="3 stars">★</label>
+
+
+              <input
+                type="radio"
+                id="star2"
+                name="rating"
+                value="2"
+              >
+              <label for="star2" title="2 stars">★</label>
+
+
+              <input
+                type="radio"
+                id="star1"
+                name="rating"
+                value="1"
+              >
+              <label for="star1" title="1 star">★</label>
+
+            </div>
+
+          </div>
+
+
+          <!-- FEEDBACK -->
+
+          <div class="form-group">
+
+            <label
+              for="reviewMessage"
+              class="form-label"
+            >
+              Your Feedback <span class="required">*</span>
+            </label>
+
+            <textarea
+              id="reviewMessage"
+              name="feedback"
+              class="form-textarea"
+              rows="5"
+              maxlength="700"
+              required
+            ></textarea>
+
+          </div>
+
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            id="submitButton"
+            class="submit-button"
+          >
+            Submit Feedback
+          </button>
+
+          <p class="form-note">
+            Your feedback will be reviewed before being
+            published on our website.
+          </p>
+
+        </form>
+
+      </div>
+
+
+      <!-- SUCCESS -->
+
+      <div
+        id="reviewSuccess"
+        class="review-success"
+        style="display: none;"
+      >
+
+        <div class="success-icon">
+          ✓
+        </div>
+
+        <h2>
+          Thank You!
+        </h2>
+
+        <p>
+          Your feedback has been submitted successfully
+          and will be reviewed before publication.
+        </p>
+
+        <p>
+          If you'd also like to share your experience
+          on Google, you can leave a review below.
+        </p>
+
+        <a
+          href="https://g.page/r/CX7jPVkTZWgeEAI/review"
+          class="google-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ★ Leave a Google Review
+        </a>
+
+      </div>
+
+
+      <!-- FOOTER -->
+
+      <div class="feedback-footer">
+
+        <strong>
+          SP Engineering & Consultancy
+        </strong>
+
+        <br>
+
+        Thank you for taking the time to share your feedback.
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- FORM SUBMISSION -->
+
+  <script>
+
+    document
+      .getElementById("reviewForm")
+      .addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const form = this;
+
+        const submitButton =
+          document.getElementById("submitButton");
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+
+        try {
+
+          const formData = new FormData(form);
+
+          const response = await fetch(
+            "/submit-review",
+            {
+              method: "POST",
+              body: new URLSearchParams(formData)
+            }
+          );
+
+          const responseText =
+            await response.text();
+
+          let result;
+
+          try {
+
+            result = JSON.parse(responseText);
+
+          } catch (jsonError) {
+
+            throw new Error(
+              "Server returned an invalid response. HTTP status: " +
+              response.status
+            );
+
+          }
+
+          if (!response.ok || !result.success) {
+
+            throw new Error(
+              result.error ||
+              "Unable to submit your feedback."
+            );
+
+          }
+
+          document
+            .getElementById("formArea")
+            .style.display = "none";
+
+          document
+            .getElementById("reviewSuccess")
+            .style.display = "block";
+
+          document
+            .getElementById("reviewSuccess")
+            .scrollIntoView({
+              behavior: "smooth",
+              block: "center"
+            });
+
+        } catch (error) {
+
+          console.error(
+            "Feedback submission error:",
+            error
+          );
+
+          alert(
+            "Feedback submission failed:\n\n" +
+            error.message
+          );
+
+        } finally {
+
+          submitButton.disabled = false;
+          submitButton.textContent = "Submit Feedback";
+
+        }
+
+      });
+
+  </script>
+
+</body>
+
+</html>
